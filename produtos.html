@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itens | Armarinho São Paulo</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg, #111111, #2d2d2d);
+            min-height: 100vh;
+            padding: 40px;
+            color: white;
+        }
+
+        .container{
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ffd700;
+            font-size: 2.8rem;
+        }
+
+        .produtos{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 25px;
+        }
+
+        .card{
+            background-color: rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .card:hover{
+            transform: scale(1.05);
+            background-color: rgba(255,255,255,0.12);
+        }
+
+        .card img{
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .card h3{
+            margin-top: 15px;
+            color: #ffd700;
+            font-size: 1.4rem;
+        }
+
+        .card p{
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+
+        .card button{
+            padding: 12px 22px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffd700;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card button:hover{
+            background-color: white;
+            transform: scale(1.05);
+        }
+
+        .voltar{
+            display: block;
+            margin: 50px auto 0;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffd700;
+            color: black;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .voltar:hover{
+            background-color: white;
+            transform: scale(1.05);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Itens Disponíveis</h1>
+
+        <div class="produtos">
+
+            <!-- CARD 1 -->
+            <div class="card">
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHZEYckuSWrWgwjUf0VuA1EyzlLDOpBhVHNg&s" alt="Linha">
+
+                <h3>Linha Azul</h3>
+
+                <p>R$ 5,50</p>
+
+                <button>Comprar</button>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card">
+
+                <img src="https://www.copatmalhas.com.br/wp-content/uploads/2020/01/acapa-7-1024x1024.jpg" alt="Tecido">
+
+                <h3>Tecido Algodão</h3>
+
+                <p>R$ 25,00</p>
+
+                <button>Comprar</button>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card">
+
+                <img src="https://storage.moovin.store/main/d41fe742-4c55-4ff3-94e1-1ada435d64a7/285581?v=1753998632" alt="Botão">
+
+                <h3>Botão Branco</h3>
+
+                <p>R$ 1,50</p>
+
+                <button>Comprar</button>
+
+            </div>
+
+        </div>
+
+        <button class="voltar" onclick="window.location.href='index.html'">
+            Voltar
+        </button>
+
+    </div>
+
+</body>
+</html>
