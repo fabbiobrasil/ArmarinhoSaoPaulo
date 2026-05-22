@@ -59,7 +59,7 @@
 
                 <p>R$ 5,50</p>
 
-                <button onclick="window.location.href='carrinho.html'">
+                <button onclick="adicionarCarrinho('Linha Azul', 5.50)">
     Comprar
 </button>
 
@@ -74,7 +74,7 @@
 
                 <p>R$ 25,00</p>
 
-                <button onclick="window.location.href='carrinho.html'">
+                <button onclick="adicionarCarrinho('Tecido Algodão', R$ 25,00)">
     Comprar
 </button>
 
@@ -89,7 +89,7 @@
 
                 <p>R$ 1,50</p>
 
-                <button onclick="window.location.href='carrinho.html'">
+                <button onclick="adicionarCarrinho('Botão Branco', R$ 1,50)">
     Comprar
 </button>
 
@@ -107,6 +107,24 @@
         </p>
 
     </footer>
+<script>
+
+function adicionarCarrinho(nome, preco){
+
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+    carrinho.push({
+        nome: nome,
+        preco: preco
+    });
+
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+    alert(nome + " adicionado ao carrinho!");
+
+}
+
+</script>
 
 </body>
 
