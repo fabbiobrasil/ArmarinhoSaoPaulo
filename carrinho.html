@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho | Armarinho São Paulo</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg, #141414, #2f2f2f);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container{
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(255,255,255,0.08);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        h1{
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-size: 2.3rem;
+        }
+
+        .carrinho-box{
+            background-color: rgba(255,255,255,0.07);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .carrinho-box:hover{
+            transform: scale(1.03);
+            background-color: rgba(255,255,255,0.12);
+        }
+
+        .texto{
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .quantidade{
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .voltar{
+            margin-top: 35px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffd700;
+            color: black;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .voltar:hover{
+            background-color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Carrinho de Compras</h1>
+
+        <div class="carrinho-box">
+            <p class="texto">Itens no Carrinho</p>
+            <div class="quantidade">0</div>
+        </div>
+
+        <button class="voltar" onclick="window.location.href='index.html'">
+            Voltar
+        </button>
+    </div>
+
+</body>
+</html>
