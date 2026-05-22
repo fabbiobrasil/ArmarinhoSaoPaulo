@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias | Armarinho São Paulo</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg, #1a1a1a, #333333);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container{
+            width: 90%;
+            max-width: 700px;
+            background-color: rgba(255,255,255,0.08);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        h1{
+            margin-bottom: 35px;
+            font-size: 2.5rem;
+            color: #ffd700;
+        }
+
+        .categorias{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .item{
+            background-color: rgba(255,255,255,0.07);
+            padding: 25px;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .item:hover{
+            transform: scale(1.05);
+            background-color: rgba(255,255,255,0.15);
+            color: #ffd700;
+        }
+
+        .voltar{
+            margin-top: 35px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffd700;
+            color: black;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .voltar:hover{
+            background-color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Categorias de Itens</h1>
+
+        <div class="categorias">
+            <div class="item">Linhas</div>
+            <div class="item">Botões</div>
+            <div class="item">Agulhas</div>
+            <div class="item">MDF</div>
+            <div class="item">Tintas</div>
+            <div class="item">Zíper</div>
+        </div>
+
+        <button class="voltar" onclick="window.location.href='index.html'">
+            Voltar
+        </button>
+    </div>
+
+</body>
+</html>
