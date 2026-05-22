@@ -85,18 +85,16 @@
 <body>
 
     <div class="container">
+
         <h1>Carrinho de Compras</h1>
 
-        <div class="carrinho-box">
-            <p class="texto">Itens no Carrinho</p>
-            <div class="quantidade">0</div>
-        </div>
+        <div id="listaCarrinho"></div>
 
         <button class="voltar" onclick="window.location.href='index.html'">
             Voltar
         </button>
+
     </div>
-<div id="listaCarrinho"></div>
 
 <script>
 
@@ -108,22 +106,28 @@ function mostrarCarrinho(){
 
     lista.innerHTML = "";
 
+    if(carrinho.length === 0){
+
+        lista.innerHTML = `
+            <div class="carrinho-box">
+                <p class="texto">Seu carrinho está vazio.</p>
+            </div>
+        `;
+
+        return;
+    }
+
     carrinho.forEach((item, index) => {
 
         lista.innerHTML += `
         
-        <div style="
-            background: rgba(255,255,255,0.08);
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-        ">
+        <div class="carrinho-box">
 
             <h3>${item.nome}</h3>
 
-            <p>R$ ${item.preco}</p>
+            <p class="texto">R$ ${item.preco}</p>
 
-            <button onclick="removerItem(${index})">
+            <button class="voltar" onclick="removerItem(${index})">
                 Remover
             </button>
 
@@ -148,5 +152,7 @@ function removerItem(index){
 mostrarCarrinho();
 
 </script>
+
+</body>
 </body>
 </html>
