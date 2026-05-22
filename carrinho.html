@@ -42,6 +42,10 @@
             font-size: 2.5rem;
         }
 
+        h3{
+            color: #ffd700;
+        }
+
         .carrinho-box{
             background-color: rgba(255,255,255,0.07);
             padding: 25px;
@@ -58,11 +62,6 @@
         .texto{
             font-size: 1.2rem;
             margin: 10px 0;
-        }
-
-        h3{
-            color: #ffd700;
-            font-size: 1.5rem;
         }
 
         .botoes{
@@ -106,6 +105,12 @@
             background-color: white;
         }
 
+        select{
+            margin-top: 15px;
+            width: 100%;
+            max-width: 350px;
+        }
+
     </style>
 
 </head>
@@ -117,6 +122,24 @@
         <h1>Carrinho de Compras</h1>
 
         <div id="listaCarrinho"></div>
+
+        <div style="margin-top: 30px;">
+
+            <h3>Forma de Recebimento</h3>
+
+            <select id="entrega" class="botao">
+
+                <option value="Entrega">
+                    Entrega
+                </option>
+
+                <option value="Buscar no estabelecimento">
+                    Buscar no estabelecimento
+                </option>
+
+            </select>
+
+        </div>
 
         <div class="botoes">
 
@@ -151,6 +174,7 @@ function mostrarCarrinho(){
         `;
 
         return;
+
     }
 
     carrinho.forEach((item, index) => {
@@ -195,6 +219,8 @@ function finalizarCompra(){
 
     }
 
+    let tipoEntrega = document.getElementById("entrega").value;
+
     let mensagem = "Olá, gostaria de finalizar meu pedido:%0A%0A";
 
     carrinho.forEach(item => {
@@ -202,6 +228,8 @@ function finalizarCompra(){
         mensagem += "• " + item.nome + " - R$ " + item.preco + "%0A";
 
     });
+
+    mensagem += "%0AForma de recebimento: " + tipoEntrega;
 
     window.open(
         "https://wa.me/5527999294271?text=" + mensagem,
