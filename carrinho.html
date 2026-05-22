@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho | Armarinho São Paulo</title>
 
     <style>
+
         *{
             margin: 0;
             padding: 0;
@@ -20,11 +22,12 @@
             justify-content: center;
             align-items: center;
             color: white;
+            padding: 20px;
         }
 
         .container{
-            width: 90%;
-            max-width: 600px;
+            width: 100%;
+            max-width: 700px;
             background-color: rgba(255,255,255,0.08);
             padding: 40px;
             border-radius: 20px;
@@ -35,8 +38,8 @@
 
         h1{
             color: #ffd700;
-            margin-bottom: 25px;
-            font-size: 2.3rem;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
         }
 
         .carrinho-box{
@@ -48,23 +51,29 @@
         }
 
         .carrinho-box:hover{
-            transform: scale(1.03);
+            transform: scale(1.02);
             background-color: rgba(255,255,255,0.12);
         }
 
         .texto{
             font-size: 1.2rem;
-            margin-bottom: 10px;
+            margin: 10px 0;
         }
 
-        .quantidade{
-            font-size: 3rem;
-            font-weight: bold;
+        h3{
             color: #ffd700;
+            font-size: 1.5rem;
         }
 
-        .voltar{
-            margin-top: 35px;
+        .botoes{
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .botao{
             padding: 12px 25px;
             border: none;
             border-radius: 10px;
@@ -76,12 +85,31 @@
             transition: 0.3s;
         }
 
-        .voltar:hover{
+        .botao:hover{
             background-color: white;
             transform: scale(1.05);
         }
+
+        .remover{
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffd700;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .remover:hover{
+            background-color: white;
+        }
+
     </style>
+
 </head>
+
 <body>
 
     <div class="container">
@@ -90,12 +118,17 @@
 
         <div id="listaCarrinho"></div>
 
-        <button class="voltar" onclick="window.location.href='index.html'">
-            Voltar
-        </button>
-        <button class="voltar" onclick="finalizarCompra()">
-    Finalizar Compra
-</button>
+        <div class="botoes">
+
+            <button class="botao" onclick="window.location.href='index.html'">
+                Voltar
+            </button>
+
+            <button class="botao" onclick="finalizarCompra()">
+                Finalizar Compra
+            </button>
+
+        </div>
 
     </div>
 
@@ -130,7 +163,7 @@ function mostrarCarrinho(){
 
             <p class="texto">R$ ${item.preco}</p>
 
-            <button class="voltar" onclick="removerItem(${index})">
+            <button class="remover" onclick="removerItem(${index})">
                 Remover
             </button>
 
@@ -152,10 +185,34 @@ function removerItem(index){
 
 }
 
+function finalizarCompra(){
+
+    if(carrinho.length === 0){
+
+        alert("Seu carrinho está vazio!");
+
+        return;
+
+    }
+
+    let mensagem = "Olá, gostaria de finalizar meu pedido:%0A%0A";
+
+    carrinho.forEach(item => {
+
+        mensagem += "• " + item.nome + " - R$ " + item.preco + "%0A";
+
+    });
+
+    window.open(
+        "https://wa.me/5527999294271?text=" + mensagem,
+        "_blank"
+    );
+
+}
+
 mostrarCarrinho();
 
 </script>
 
-</body>
 </body>
 </html>
